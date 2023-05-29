@@ -16,7 +16,7 @@ public class ResponseModel {
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private List<String> errorlist;
 	@JsonInclude(JsonInclude.Include.NON_NULL)
-	
+	private RegisterModel data;
 	public void setRegisterData(RegisterModel registerModel) {
 		// TODO 自動生成されたメソッド・スタブ
 		

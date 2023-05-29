@@ -10,17 +10,17 @@ public class RegisterModel {
 	@NotEmpty
 	 private String email;
 	 private String password;
-	 private String fisrtname;
+	 private String firstname;
 	 private String middlename;
 	 private String lastname;
-	 private String fisrtnamekana;
+	 private String firstnamekana;
 	 private String middlenamekana;
 	 private String lastnamekana;
-	 private String fisrtnamekanzi;
+	 private String firstnamekanzi;
 	 private String lastnamekanzi;
 	 private String visatype;
 	 private Date visadate;
-	 
+	 private String country;
 	 
 
 }

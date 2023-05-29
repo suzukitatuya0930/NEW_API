@@ -23,13 +23,14 @@ public class RegisterController {
 	
 	@Resource RegisterService registerService;
 	@PostMapping("/register")
-	public ResponseEntity<?> register(@RequestBody RegisterModel registerModel) {
+	public ResponseEntity<?> register(@RequestBody RegisterModel registerModel,ResponseModel responseModel) {
 		try {
 			registerService.register(registerModel);
-			return ResponseEntity.status(HttpStatus.OK).body(registerModel);
+			responseModel.setRegisterData(registerModel);
+			return ResponseEntity.status(HttpStatus.OK).body(responseModel);
 		} catch (DuplicateFormatFlagsException ex) {
 			// メールアドレスが重複している場合の処理
-			ResponseModel responseModel = new ResponseModel();
+			
 			responseModel.setCode(HttpStatus.BAD_REQUEST.value());
 			responseModel.setStatus("ERROR");
 			responseModel.setInformation("既に登録されたメールアドレスです");
