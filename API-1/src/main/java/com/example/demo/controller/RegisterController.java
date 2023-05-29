@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.DuplicateFormatFlagsException;
+import java.util.Random;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,9 +25,15 @@ public class RegisterController {
 	@Resource RegisterService registerService;
 	@PostMapping("/register")
 	public ResponseEntity<?> register(@RequestBody RegisterModel registerModel) {
-		try {
-			registerService.register(registerModel);
-			return ResponseEntity.status(HttpStatus.OK).body(registerModel);
+		try 
+		{
+			  String password = generateRandomPassword(8);
+	        
+	        // パスワードをregisterModelにセット
+        registerModel.setPassword(password);
+	        
+	        registerService.register(registerModel);
+	        return ResponseEntity.status(HttpStatus.OK).body(registerModel);
 		} catch (DuplicateFormatFlagsException ex) {
 			// メールアドレスが重複している場合の処理
 			ResponseModel responseModel = new ResponseModel();
@@ -41,4 +48,20 @@ public class RegisterController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
 	}
+	
+	private String generateRandomPassword(int length) {
+	    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	    Random random = new Random();
+	    StringBuilder sb = new StringBuilder(length);
+	    
+	    for (int i = 0; i < length; i++) {
+	        int randomIndex = random.nextInt(characters.length());
+	        char randomChar = characters.charAt(randomIndex);
+	        sb.append(randomChar);
+	    }
+	    
+	    return sb.toString();
+	}
+	
+	
 }

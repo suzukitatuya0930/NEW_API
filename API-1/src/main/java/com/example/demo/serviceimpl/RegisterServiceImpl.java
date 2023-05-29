@@ -22,7 +22,6 @@ public class RegisterServiceImpl implements RegisterService{
 	        if (emailExists) {
 	            throw new DuplicateFormatFlagsException("既に登録されたメールアドレスです");
 	        }
-
 	        // ユーザーの登録
 	        return mapper.register(registerModel);
 	    }
