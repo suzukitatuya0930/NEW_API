@@ -32,23 +32,23 @@ public class LoginController {
 	        	
 	        	
 	        	
-	 	        //log.info("{}",responseModel);
-	        	//LoginModel login = new LoginModel();
-//	        	loginModel.setCode("200");
-//	        	loginModel.setEmail(email);
-//	        	loginModel.setRole(user.getRole());
+	 	       
+	        	LoginModel login = new LoginModel();
+	        	login.setCode("200");
+	        	login.setEmail(email);
+	        	login.setRole(user.getRole());
 	        	
 	        	
 	        	
-	        	responseModel.setCode(200);
-	        	responseModel.setStatus("OK");
-	        	responseModel.setInformation("ログインできました");
-	      
-	        	responseModel.setLogindata(loginModel);
+//	        	responseModel.setCode(200);
+//	        	responseModel.setStatus("OK");
+//	        	responseModel.setInformation("ログインできました");
+//	      
+//	        	responseModel.setLogindata(loginModel);
 	        	
 	        	
 	        	
-	            return ResponseEntity.status(HttpStatus.OK).body(responseModel);
+	            return ResponseEntity.status(HttpStatus.OK).body(login);
 	        } else {
 	        	
 	        	
