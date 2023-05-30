@@ -26,4 +26,10 @@ public class RegisterServiceImpl implements RegisterService{
 	        // ユーザーの登録
 	        return mapper.register(registerModel);
 	    }
+
+	@Override
+	public RegisterModel takePass(RegisterModel registerModel) {
+		
+		return mapper.takePass(registerModel);
+	}
 	}

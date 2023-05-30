@@ -12,4 +12,6 @@ public interface RegisterMapper {
 	int register(RegisterModel registerModel);
 	
 	boolean checkEmailExists(String email);
+
+	RegisterModel takePass(RegisterModel registerModel);
 }

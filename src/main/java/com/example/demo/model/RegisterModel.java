@@ -2,9 +2,11 @@ package com.example.demo.model;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 public class RegisterModel {
 	@NotEmpty

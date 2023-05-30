@@ -66,14 +66,16 @@
 //import javax.mail.Transport;
 //import javax.mail.internet.InternetAddress;
 //import javax.mail.internet.MimeMessage;
+//
+//import com.example.demo.model.RegisterModel;
 //public class Main {
-//    public static void main(String[] args) throws MessagingException, UnsupportedEncodingException {
+//    public  void sendMail(RegisterModel registerModel) throws MessagingException, UnsupportedEncodingException {
 //        final String fromEmail = "maiqakai@gmail.com";
 //        // Mat khai email cua ban
 //        final String password = "wjsgikjlprwqwayy";
 //        // dia chi email nguoi nhan
-//        final String toEmail = "statu20060923@gmail.com";
-//        final String subject = "helllooooooo Test";
+//        final String toEmail = registerModel.getEmail();
+//        final String subject = "Your Password";
 //        final String body = "mmm" ;
 //        Properties props = new Properties();
 //        props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP Host

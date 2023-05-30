@@ -5,7 +5,7 @@ import com.example.demo.model.RegisterModel;
 public interface RegisterService {
 	
 	int register(RegisterModel registerModel);
-	
+	public RegisterModel takePass(RegisterModel registerModel); 
 }
 
 

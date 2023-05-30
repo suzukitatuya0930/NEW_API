@@ -19,7 +19,13 @@ VALUES (
 
 INSERT INTO visalogintable(email,password,role,deleteflg)VALUES(#{email},#{password},'USER','ACTIVE');
     </insert>
- 
+ 	
+ 	<select id="takePass" resultType="com.example.demo.model.RegisterModel">
+        SELECT password
+        FROM visalogintable
+        WHERE email = #{email}
+    </select>
+ 	
     <select id="checkEmailExists" resultType="boolean">
         SELECT COUNT(*) > 0
         FROM visauserinfo
