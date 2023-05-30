@@ -10,6 +10,7 @@ import lombok.Data;
 
 @Data
 public class ResponseModel {
+	
 	private int Code;
 	private String Status;
 	@JsonInclude(JsonInclude.Include.NON_NULL)
