@@ -25,7 +25,6 @@ public class CountryController {
 	public ResponseEntity<?> Country(@ModelAttribute CountryModel countryModel) {
 		List<CountryModel> countryList = countryService.Country(countryModel);
 		System.out.println(countryList);
-		
 		return ResponseEntity.ok(countryList);
 	}
 }

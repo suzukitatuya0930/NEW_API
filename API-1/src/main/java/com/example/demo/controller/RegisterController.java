@@ -24,24 +24,31 @@ public class RegisterController {
 	
 	@Resource RegisterService registerService;
 	@PostMapping("/register")
-	public ResponseEntity<?> register(@RequestBody RegisterModel registerModel) {
+	public ResponseEntity<?> register(@RequestBody RegisterModel registerModel,ResponseModel responseModel) {
 		try 
 		{
 			  String password = generateRandomPassword(8);
 	        
 	        // パスワードをregisterModelにセット
-        registerModel.setPassword(password);
-	        
+			  registerModel.setPassword(password);
+      
+        	
 	        registerService.register(registerModel);
-	        return ResponseEntity.status(HttpStatus.OK).body(registerModel);
+	        responseModel.setCode(200);
+	        responseModel.setStatus("OK");
+	        responseModel.setInformation("登録できました");
+	        responseModel.setRegisterdata(registerModel);
+	        
+	        log.info("{}",responseModel);
+	        return ResponseEntity.status(HttpStatus.OK).body(responseModel);
 		} catch (DuplicateFormatFlagsException ex) {
 			// メールアドレスが重複している場合の処理
-			ResponseModel responseModel = new ResponseModel();
-			responseModel.setCode(HttpStatus.BAD_REQUEST.value());
+			
+			responseModel.setCode(400);
 			responseModel.setStatus("ERROR");
 			responseModel.setInformation("既に登録されたメールアドレスです");
-			responseModel.setRegisterData(registerModel);
-			return ResponseEntity.badRequest().body(responseModel);
+			responseModel.setRegisterdata(registerModel);
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseModel);
 		} catch (Exception ex) {
 			// その他の例外が発生した場合の処理
 			log.error("ユーザー登録エラー: ", ex);

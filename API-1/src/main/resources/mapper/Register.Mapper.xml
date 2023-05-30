@@ -6,21 +6,32 @@
 
     
     
-    <insert id="register" parameterType="com.example.demo.model.RegisterModel" >
+    <!--  <insert id="register" parameterType="com.example.demo.model.RegisterModel" >
    		INSERT 
 INTO usertable_1( 
-    email, firstname, middlename, lastname, fisrtnamekana, middlenamekana, lastnamekana, fisrtnamekanzi, lastnamekanzi, visatype, visadate, password
+    email, firstname, middlename, lastname, fisrtnamekana, middlenamekana, lastnamekana, fisrtnamekanzi, lastnamekanzi, visatype, visadate, 
 ) 
 VALUES ( 
-#{email},#{fisrtname},#{middlename},#{lastname},#{fisrtnamekana},#{middlenamekana},#{lastnamekana},#{fisrtnamekanzi},#{lastnamekanzi},#{visatype},#{visadate},#{password}
+#{email},#{fisrtname},#{middlename},#{lastname},#{fisrtnamekana},#{middlenamekana},#{lastnamekana},#{fisrtnamekanzi},#{lastnamekanzi},#{visatype},#{visadate}
 )
    		
+    </insert>-->
+    
+       <insert id="register" parameterType="com.example.demo.model.RegisterModel" >
+   		INSERT 
+INTO visauserinfo( 
+    email, firstname, middlename, lastname, firstnamekana, middlenamekana, lastnamekana, firstnamekanzi, 
+    lastnamekanzi, visatype, visadate,country,deleteflg) 
+VALUES ( 
+#{email},#{firstname},#{middlename},#{lastname},#{firstnamekana},#{middlenamekana},#{lastnamekana},
+#{firstnamekanzi},#{lastnamekanzi},#{visatype},#{visadate},#{country},'ACTIVE');
+
+INSERT INTO visalogintable(email,password,role,deleteflg)VALUES(#{email},#{password},'USER','ACTIVE');
     </insert>
-    
-    
+ 
     <select id="checkEmailExists" resultType="boolean">
         SELECT COUNT(*) > 0
-        FROM usertable_1
+        FROM visauserinfo
         WHERE email = #{email}
     </select>
 </mapper>

@@ -12,11 +12,12 @@ import jakarta.annotation.Resource;
 
 @Service
 public class RegisterServiceImpl implements RegisterService{
+	
 	@Resource
 	RegisterMapper mapper;
 	
 	 @Override
-	    public int register(RegisterModel registerModel) {
+	    public Object register(RegisterModel registerModel) {
 	        // メールアドレスの重複チェック
 	        boolean emailExists = mapper.checkEmailExists(registerModel.getEmail());
 	        if (emailExists) {

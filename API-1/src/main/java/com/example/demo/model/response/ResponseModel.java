@@ -2,6 +2,7 @@ package com.example.demo.model.response;
 
 import java.util.List;
 
+import com.example.demo.model.LoginModel;
 import com.example.demo.model.RegisterModel;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -16,12 +17,17 @@ public class ResponseModel {
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private List<String> errorlist;
 	@JsonInclude(JsonInclude.Include.NON_NULL)
+	private RegisterModel registerdata;
+	@JsonInclude(JsonInclude.Include.NON_NULL)
+	private LoginModel logindata;
 	
-	public void setRegisterData(RegisterModel registerModel) {
-		// TODO 自動生成されたメソッド・スタブ
-		
-	}
+	
+	
+	
+	
 }
+	
+	
 
 
 
