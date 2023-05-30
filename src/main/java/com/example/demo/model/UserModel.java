@@ -1,0 +1,23 @@
+package com.example.demo.model;
+
+import java.sql.Date;
+
+import lombok.Data;
+@Data
+public class UserModel {
+	
+	 private String email;
+	 private String firstname;
+	 private String middlename;
+	 private String lastname;
+	 private String firstnamekana;
+	 private String middlenamekana;
+	 private String lastnamekana;
+	 private String firstnamekanzi;
+	 private String lastnamekanzi;
+	 private String visatype;
+	 private Date visadate;
+	 private String country;
+	
+	
+}

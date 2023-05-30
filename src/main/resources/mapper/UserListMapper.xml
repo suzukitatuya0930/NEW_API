@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserListMapper">
+
+    
+    
+    <select id="homePage" resultType="com.example.demo.model.UserListModel" >
+   		SELECT visatype,visadate,country FROM visauserinfo WHERE deleteflg = 'ACTIVE'		
+    </select>
+    
+    <select id="userList" resultType="com.example.demo.model.UserListModel" >
+   		SELECT visadate,firstname,middlename,lastname,firstnamekana,middlenamekana,lastnamekana FROM visauserinfo WHERE deleteflg = 'ACTIVE'		
+    </select>
+    
+   
+</mapper>
+
+
+
