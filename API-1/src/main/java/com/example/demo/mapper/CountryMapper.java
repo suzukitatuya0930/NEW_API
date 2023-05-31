@@ -11,6 +11,6 @@ import com.example.demo.model.CountryModel;
 public interface CountryMapper {
 	
 	
-	List<CountryModel> Country(CountryModel countryModel);
+	List<CountryModel> country(CountryModel countryModel);
 }
 

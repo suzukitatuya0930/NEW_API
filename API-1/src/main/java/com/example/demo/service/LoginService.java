@@ -6,5 +6,5 @@ public interface LoginService {
 	
 	//public List<LoginModel> Login(LoginModel loginModel);
 
-	LoginModel Login(LoginModel loginModel);
+	LoginModel login(LoginModel loginModel);
 }

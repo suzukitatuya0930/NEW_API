@@ -23,31 +23,21 @@ public class LoginController {
 	@Resource LoginService loginService;
 	
 	@PostMapping("/login")
-	public ResponseEntity<?> Login(@RequestBody  LoginModel loginModel,ResponseModel responseModel) {
+	public ResponseEntity<?> login(@RequestBody  LoginModel loginModel,ResponseModel responseModel) {
 		String email = loginModel.getEmail();
 	    String password = loginModel.getPassword();
 
-			LoginModel user = loginService.Login(loginModel);
+			LoginModel user = loginService.login(loginModel);
 	        if (user != null && user.getPassword().equals(password)) {
 	        	
 	        	
-	        	
-	 	       
 	        	LoginModel login = new LoginModel();
 	        	login.setCode("200");
 	        	login.setEmail(email);
 	        	login.setRole(user.getRole());
 	        	
-	        	
-	        	
-//	        	responseModel.setCode(200);
-//	        	responseModel.setStatus("OK");
-//	        	responseModel.setInformation("ログインできました");
-//	      
-//	        	responseModel.setLogindata(loginModel);
-	        	
-	        	
-	        	
+	       
+	      	
 	            return ResponseEntity.status(HttpStatus.OK).body(login);
 	        } else {
 	        	

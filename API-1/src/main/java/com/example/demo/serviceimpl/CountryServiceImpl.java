@@ -15,9 +15,9 @@ public  class CountryServiceImpl implements CountryService {
 	 @Resource
 	    private CountryMapper countryMapper;
 
-	public List<CountryModel> Country(CountryModel countryModel) {
+	public List<CountryModel> country(CountryModel countryModel) {
 		
-		 return countryMapper.Country(countryModel);
+		 return countryMapper.country(countryModel);
     }
 	}
 

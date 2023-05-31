@@ -15,8 +15,8 @@ public class LoginServiceImpl implements LoginService {
 
 	 @Override
 	 //public List<LoginModel> Login(LoginModel loginModel) {
-		public LoginModel Login(LoginModel loginModel) {
-		 return loginMapper.Login(loginModel);
+		public LoginModel login(LoginModel loginModel) {
+		 return loginMapper.login(loginModel);
  }
 	}
 

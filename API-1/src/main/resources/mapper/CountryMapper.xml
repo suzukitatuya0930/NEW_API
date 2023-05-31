@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.CountryMapper">
 
-    <select id="Country" resultType="com.example.demo.model.CountryModel" >
-   		SELECT  name FROM prefecture
+    <select id="country" resultType="com.example.demo.model.CountryModel" >
+   		SELECT  name FROM country_master WHERE deleteflg = 0;
     </select>
 
 </mapper>

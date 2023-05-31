@@ -8,6 +8,8 @@ import com.example.demo.model.LoginModel;
 @Mapper
 public interface LoginMapper {
 	
-	LoginModel Login(LoginModel loginModel);
+	LoginModel login(LoginModel loginModel);
+
+	
 
 }

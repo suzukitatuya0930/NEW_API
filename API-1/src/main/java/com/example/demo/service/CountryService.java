@@ -6,6 +6,6 @@ import com.example.demo.model.CountryModel;
 
 public interface CountryService {
 	
-	public List<CountryModel> Country(CountryModel countryModel);
+	public List<CountryModel> country(CountryModel countryModel);
 
 }

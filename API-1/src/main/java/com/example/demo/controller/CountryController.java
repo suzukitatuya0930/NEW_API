@@ -22,8 +22,8 @@ public class CountryController {
 	CountryService countryService;
 	
 	@GetMapping("/country")
-	public ResponseEntity<?> Country(@ModelAttribute CountryModel countryModel) {
-		List<CountryModel> countryList = countryService.Country(countryModel);
+	public ResponseEntity<?> country(@ModelAttribute CountryModel countryModel) {
+		List<CountryModel> countryList = countryService.country(countryModel);
 		System.out.println(countryList);
 		return ResponseEntity.ok(countryList);
 	}
