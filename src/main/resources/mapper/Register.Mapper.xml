@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.RegisterMapper">
+
+    
+    
+    <!--  <insert id="register" parameterType="com.example.demo.model.RegisterModel" >
+   		INSERT 
+INTO usertable_1( 
+    email, firstname, middlename, lastname, fisrtnamekana, middlenamekana, lastnamekana, fisrtnamekanzi, lastnamekanzi, visatype, visadate, 
+) 
+VALUES ( 
+#{email},#{fisrtname},#{middlename},#{lastname},#{fisrtnamekana},#{middlenamekana},#{lastnamekana},#{fisrtnamekanzi},#{lastnamekanzi},#{visatype},#{visadate}
+)
+   		
+    </insert>-->
+    
+       <insert id="register" parameterType="com.example.demo.model.RegisterModel" >
+   		INSERT 
+INTO visauserinfo( 
+    email, firstname, middlename, lastname, firstnamekana, middlenamekana, lastnamekana, firstnamekanzi, 
+    lastnamekanzi, visatype, visadate,country,deleteflg) 
+VALUES ( 
+#{email},#{firstname},#{middlename},#{lastname},#{firstnamekana},#{middlenamekana},#{lastnamekana},
+#{firstnamekanzi},#{lastnamekanzi},#{visatype},#{visadate},#{country},'ACTIVE');
+
+INSERT INTO visalogintable(email,password,role,deleteflg)VALUES(#{email},#{password},'USER','ACTIVE');
+    </insert>
+ 
+    <select id="checkEmailExists" resultType="boolean">
+        SELECT COUNT(*) > 0
+        FROM visauserinfo
+        WHERE email = #{email}
+    </select>
+</mapper>
+
+
+

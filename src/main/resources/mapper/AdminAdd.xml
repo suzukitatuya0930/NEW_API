@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.AdminAddMapper">
+
+    
+       <insert id="adminadd" parameterType="com.example.demo.model.AdminAddModel" >
+   		INSERT 
+INTO visaadmininfo( 
+    email, firstname, middlename, lastname, deleteflg) 
+VALUES ( 
+#{email},#{firstname},#{middlename},#{lastname},'ACTIVE');
+
+INSERT INTO visalogintable(email,password,role,deleteflg)VALUES(#{email},#{password},#{role},'ACTIVE');
+    </insert>
+    	
+   	 <select id="checkEmailExists" resultType="boolean">
+        SELECT COUNT(*) > 0
+        FROM visalogintable
+        WHERE email = #{email};
+    </select>
+    
+</mapper>
+
+
+
