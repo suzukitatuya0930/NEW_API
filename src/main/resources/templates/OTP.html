@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+</head>
+
+<body>
+    <div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
+        <div style="margin:0px 50px;width:70%">
+          <div style="border-bottom:1px solid #eee">
+            <a href="" style="font-size:1.4em;color: #00466a;text-decoration:none;font-weight:600">KKSOFT COMPANY</a>
+          </div>
+          <p style="font-size:1em">いつも弊社をご利用いただき、ありがとうございます。</p>
+          <p>お客様のアカウントのセキュリティを強化するため、ワンタイムパスワード（OTP）をご提供いたします。
+            以下にご利用いただけるワンタイムパスワードをお知らせいたします。</p>
+          <h2  style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;"th:text="${token}" ></h2>
+          <p style="font-size:0.9em;">このパスワードはセキュリティ上の理由から、一度のみ有効です。ログイン時にご利用ください。<br />
+            もしもこのメールに心当たりがない場合や、ご不明な点がございましたら、お手数ですが弊社サポートチームまでお問い合わせください。<br />
+            どうぞ安全にご利用ください</p>
+          <hr style="border:none;border-top:1px solid #eee" />
+          <div style="float:right;padding:8px 0;font-size:1em;line-height:1;font-weight:300">
+            <p>株式会社KKSOFT</p>
+            <p>お客様サービス担当</p>
+            <p>マイクァンカイ</p>
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>
+
+
+<!--<meta charset="ISO-8859-1">-->
